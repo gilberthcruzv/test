@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+
+	<record id="view_crm_lead_inherit" model="ir.ui.view">
+		<field name="name">crm.lead.inherit</field>
+		<field name="model">crm.lead</field>
+		<field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<field name="create_date" invisible='1'/>
+			</xpath>
+			<xpath expr="//kanban" position="attributes">
+					<attribute name="default_order">create_date desc</attribute>
+			</xpath>
+		</field>
+	</record>
+
+
+  </data>
+</odoo>
